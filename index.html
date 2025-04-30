@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Analizador de Excel</title>
+</head>
+<body>
+  <h1>Subí tu archivo Excel</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Cargar</button>
+  </form>
+  <hr>
+  <h2>Consulta</h2>
+  <form method="POST">
+    <input type="text" name="consulta" placeholder="Ej: ¿Cuántos países hay?">
+    <button type="submit">Consultar</button>
+  </form>
+  <hr>
+  {% if message %}
+    <p><strong>Resultado:</strong> {{ message }}</p>
+  {% endif %}
+  {% if columns %}
+    <p><strong>Columnas disponibles:</strong> {{ columns }}</p>
+  {% endif %}
+</body>
+</html>
